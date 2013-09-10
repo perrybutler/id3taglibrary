@@ -8,7 +8,7 @@ A free open-source ID3v1 and ID3v2 tag parsing utility for MP3 files. Programmed
 -Meticulously built from scratch in accordance with official ID3 spec.  
 -Detects ALL ID3v2 frames such as those typically hidden or ignored - PRIV, etc.  
 -In the works: tag writing. Insert/edit/delete ANY ID3v2 frame.  
--Future plans for: batch processing, MPEG data (duration, bitrate, etc), filemeta/online/catalog auto-tagging.  
+-Future plans for: batch processing, MPEG data (duration, bitrate, etc), filemeta/online/catalog auto-tagging, custom frames.  
 
 Perry's ID3 Tag Viewer implements the current version of the library:
 
@@ -19,4 +19,6 @@ However, the Viewer is currently not available as an open-source project for now
 History
 =======
 
-This project originated as a sub-component for an older project I started in 2010. Attempting to implement a full spec ID3 tag reader was a huge challenge for me (having zero binary knowledge at the time) but overall proved to be an incredible learning experience.
+This project originated as a sub-component for an older project I started in 2010, during which I only knew of a few other libraries, very few for .NET, even fewer for .NET open-source, and literally zero for VB.NET open-source.
+
+Attempting to implement a full spec ID3 tag reader was a huge challenge for me (having no binary computer sciency knowledge at the time) but overall proved to be an incredible learning experience. Not being accustomed to open-source, it's initially difficult to share the results of this hard work so openly, but I've learned that it makes me happier to see just how useful my code might be to others. So please respect the license.
