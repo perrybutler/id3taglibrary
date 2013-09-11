@@ -22,3 +22,5 @@ History
 This project originated as a sub-component for an older project I started in 2010, during which I only knew of a few other libraries, very few for .NET, even fewer for .NET open-source, and literally zero for VB.NET open-source.
 
 Attempting to implement a full spec ID3 tag reader was a huge challenge for me (having no binary computer sciency knowledge at the time) but overall proved to be an incredible learning experience. Not being accustomed to open-source, it's initially difficult to share the results of this hard work so openly, but I've learned that it makes me happier to see just how useful my code might be to others. So please respect the license.
+
+Also it seems like some digital music retailers are embedding ownership/copyright data in the ID3 tags using hidden PRIV or other types of encrypted frames. Read more about this discovery here: https://plus.google.com/118266206851318889389/posts/2hscpA1fCNi
