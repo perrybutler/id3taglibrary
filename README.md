@@ -7,8 +7,6 @@ A free open-source ID3v1 and ID3v2 tag parsing utility for MP3 files. Programmed
 -Object oriented architecture - MP3File, ID3v2Tag, Frame, mp3.Artwork, etc.  
 -Meticulously built from scratch in accordance with official ID3 spec.  
 -Detects ALL ID3v2 frames such as those typically hidden or ignored - PRIV, etc.  
--In the works: tag writing. Insert/edit/delete ANY ID3v2 frame.  
--Future plans for: batch processing, MPEG data (duration, bitrate, etc), filemeta/online/catalog auto-tagging, custom frames.  
 
 ![Class Diagrams](http://files.glassocean.net/github/id3taglibrary1.jpg)
 
@@ -18,8 +16,36 @@ Perry's ID3 Tag Viewer implements the current version of the library:
 
 However, the Viewer is currently not available as an open-source project for now...
 
+Roadmap
+-------
+
+**Tag writing**
+
+First prototype of direct ID3v2 frame data editing/saving has been partially implemented and tested, which involves  splitting and rejoining the file if the saved frame data is larger than the current frame size + padding. This should also include reading/writing custom frame types.
+
+The Tag Viewer should also implement a simple interface for making these types of edits, preferably straight from the DataGrids.
+
+**Batch processing**
+
+A feature for the Tag Viewer; this would allow batch processing of mp3 files, such as changing the artwork for an entire album, removing hidden PRIV frames from several albums, or renaming a selection of files based on their filenames/tag data.
+
+**MPEG header parsing**
+
+First prototype has been developed. Will search the mp3 file for MPEG header frames starting AFTER the ID3v2 tag since many false sync signals can be detected in the ID3v2 tag which causes excessive processing since each sync signal must be evaluated as to whether or not they are true MPEG header frames.
+
+Utilizes a well known algorithm[[1]](#references).
+
+**Auto-tag & auto-fix**
+
+Automatically fill tag data (artist, album, track, artwork, etc) from online sources (freedb, Amazon, etc).
+
+References
+----------
+
+[1] [MPEG AUDIO HEADER FRAME](http://www.mpgedit.org/mpgedit/mpeg_format/mpeghdr.htm)
+
 History
-=======
+-------
 
 This project originated as a sub-component for an older project I started in 2010, during which I only knew of a few other libraries, very few for .NET, even fewer for .NET open-source, and literally zero for VB.NET open-source.
 
