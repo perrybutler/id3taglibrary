@@ -39,10 +39,17 @@ Utilizes a well known algorithm[[1]](#references).
 
 Automatically fill tag data (artist, album, track, artwork, etc) from online sources (freedb, Amazon, etc).
 
+**Windows Media Player album artwork fix**
+
+Trying to maintain a song library in Windows Media Player can be frustrating.
+
 References
 ----------
 
 [1] [MPEG AUDIO HEADER FRAME](http://www.mpgedit.org/mpgedit/mpeg_format/mpeghdr.htm)
+[2] [Help, I am going INSANE! WMP 12 album art.](http://social.technet.microsoft.com/Forums/windows/en-US/e6ee46cc-f088-4847-a9a2-58fac6888407/help-i-am-going-insane-wmp12-album-art)
+
+[4] [](https://plus.google.com/118266206851318889389/posts/2hscpA1fCNi)
 
 History
 -------
@@ -51,4 +58,4 @@ This project originated as a sub-component for an older project I started in 201
 
 Attempting to implement a full spec ID3 tag reader was a huge challenge for me (having no binary computer sciency knowledge at the time) but overall proved to be an incredible learning experience. Not being accustomed to open-source, it's initially difficult to share the results of this hard work so openly, but I've learned that it makes me happier to see just how useful my code might be to others. So please respect the license.
 
-One thing that inspired me to keep me working on this project was an interesting discovery made in part by myself and a Russian blogger who published an article (in Russian) pointing out hidden data found in MP3 files by using my ID3 Tag Viewer. It seems like some digital music retailers like to embed ownership/copyright data (e.g. your full name) in the ID3 tags using hidden PRIV or other types of encrypted frames. Sneaky and probably very controversial. Read more about this here: https://plus.google.com/118266206851318889389/posts/2hscpA1fCNi
+One thing that inspired me to keep me working on this project was an interesting discovery made in part by myself and a Russian blogger who published an article (in Russian) pointing out hidden data found in MP3 files by using my ID3 Tag Viewer. It seems like some digital music retailers like to embed ownership/copyright data (e.g. your full name) in the ID3 tags using hidden PRIV or other types of encrypted frames. Sneaky and probably very controversial [[4]](#references).
