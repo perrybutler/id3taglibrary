@@ -16,6 +16,11 @@ Perry's ID3 Tag Viewer implements the current version of the library:
 
 However, the Viewer is currently not available as an open-source project for now...
 
+PRIV Frame Abuse
+----------------
+
+
+
 Roadmap
 -------
 
@@ -77,4 +82,4 @@ This project originated as a sub-component for an older project I started in 201
 
 Attempting to implement a full spec ID3 tag reader was a huge challenge for me (having no binary computer sciency knowledge at the time) but overall proved to be an incredible learning experience. Not being accustomed to open-source, it's initially difficult to share the results of this hard work so openly, but I've learned that it makes me happier to see just how useful my code might be to others. So please respect the license.
 
-One thing that inspired me to keep me working on this project was an interesting discovery made in part by myself and a Russian blogger who published an article (in Russian) pointing out how digital music retailers such as Amazon store hidden personal information (e.g. your full name and a purchase id linked to your account id) in PRIV frames of the ID3 tags embedded in mp3 files. Sneaky and probably a controversial activity [[4]](#references).
+One thing that inspired me to keep me working on this project was an interesting discovery made in part by myself and a Russian blogger who published an article (in Russian) pointing out how digital music retailers such as Amazon use a type of audio steganography to store unique purchase identifiers (information about who purchased the music, with a full name/user account id linked to a purchase id) in the mp3 files by embedding the data inside PRIV frames of the ID3 tags which are ignored by nearly all music software [[4]](#references).
