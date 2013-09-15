@@ -33,7 +33,7 @@ A feature for the Tag Viewer; this would allow batch processing of mp3 files, su
 
 Prototype has been developed utilizing a well known algorithm [[1]](#references). Will search the mp3 file for valid MPEG header frames starting AFTER the ID3v2 tag. The reason is that many false sync signals can be detected in the ID3v2 tag which causes excessive processing since each sync signal must be evaluated to make sure it's a true MPEG header frame.
 
-Results are looking good so far! Here's a partial output of the valid MPEG header frames being detected in the first 50 KB (after the ID3v2 tag) of an mp3 file:
+Results are looking good so far! Here's a partial output of the valid MPEG header frames being detected in the first 10 KB (after the ID3v2 tag) of an mp3 file:
 
 ```
 Reading next chunk of 10000 bytes...
@@ -47,24 +47,6 @@ Detected sync byte at array index 6278 with a value of 1111111111111011111000100
 Detected sync byte at array index 7323 with a value of 11111111111110111110001001100100 or an ASCII value of ÿûâd
 Detected sync byte at array index 8368 with a value of 11111111111110111110001001100100 or an ASCII value of ÿûâd
 Detected sync byte at array index 9413 with a value of 11111111111110111110001001100100 or an ASCII value of ÿûâd
-Reading next chunk of 10000 bytes...
-Detected sync byte at array index 458 with a value of 11111111111110111110001001100100 or an ASCII value of ÿûâd
-Detected sync byte at array index 1503 with a value of 11111111111110111110000001100100 or an ASCII value of ÿûàd
-Detected sync byte at array index 1947 with a value of 11111111111111000100100111000000 or an ASCII value of ÿüIÀ
-Detected sync byte at array index 2547 with a value of 11111111111110111110001001100100 or an ASCII value of ÿûâd
-Detected sync byte at array index 2835 with a value of 11111111111111111001010111110001 or an ASCII value of ÿÿ•ñ
-Detected sync byte at array index 2843 with a value of 11111111111111111100101100011100 or an ASCII value of ÿÿË
-Detected sync byte at array index 3592 with a value of 11111111111110111110001001000100 or an ASCII value of ÿûâD
-Detected sync byte at array index 4637 with a value of 11111111111110111110001001000100 or an ASCII value of ÿûâD
-Detected sync byte at array index 5123 with a value of 11111111111111111011010110011011 or an ASCII value of ÿÿµ›
-Detected sync byte at array index 5682 with a value of 11111111111110111110001001000100 or an ASCII value of ÿûâD
-Detected sync byte at array index 6727 with a value of 11111111111110111110001001000100 or an ASCII value of ÿûâD
-Detected sync byte at array index 7682 with a value of 11111111111111111110000000111111 or an ASCII value of ÿÿà?
-Detected sync byte at array index 7772 with a value of 11111111111110111110001001100100 or an ASCII value of ÿûâd
-Detected sync byte at array index 8085 with a value of 11111111111111011110101110010111 or an ASCII value of ÿýë—
-Detected sync byte at array index 8731 with a value of 11111111111111111110101100011111 or an ASCII value of ÿÿë
-Detected sync byte at array index 8817 with a value of 11111111111110111110001001000100 or an ASCII value of ÿûâD
-Detected sync byte at array index 9862 with a value of 11111111111110111110001001000100 or an ASCII value of ÿûâD
 ```
 
 If you count the gap between each detected (valid) MPEG header frame in the data above, you will notice it's always 1044 or 1045. This value happens to be the MPEG frame size. The results above are equivalent to the same mp3 file when viewed in Windows Media ASF View 9 Series.
