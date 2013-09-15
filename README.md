@@ -55,7 +55,7 @@ As was already explained in the above note about Windows Media Player 7, what en
 
 To make matters worse, Windows Media Player seems to store the GUID inside of a PRIV frame in the ID3 tag embedded in the mp3 file, so even if you try fixing the embedded artwork, Windows Media Player will see the GUID in the PRIV frame and regenerate the hidden jpg files. The problem spreads around from person to person, likely finds its way back into the online database, and never truly gets fixed because users don’t have a way of correcting mp3 files with bad GUIDs stored in PRIV frames of the ID3 tags. Users of Windows have no doubt seen this before:
 
-![artwork as hidden jpg files](http://files.glassocean.net/github/id3-tag-library-2.jpg)
+![artwork as hidden jpg files](http://files.glassocean.net/github/id3taglibrary2.jpg)
 
 Perry's ID3 Tag Library (and Tag Viewer) can detect this problem, and future versions with tag writing capabilities should allow users to fix it. This won't help fix the online database, but at least users will have a way to fix their own music collections by removing the PRIV frames so Windows Media Player stops generating the artwork (jpg files) with bad GUIDs [[2]](#references).
 
