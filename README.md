@@ -29,11 +29,11 @@ The Tag Viewer should also implement a simple interface for making these types o
 
 A feature for the Tag Viewer; this would allow batch processing of mp3 files, such as changing the artwork for an entire album, removing hidden PRIV frames from several albums, or renaming a selection of files based on their filenames/tag data.
 
-**MPEG info parsing**
+**MPEG stream parsing**
 
 Prototype has been developed utilizing a well known algorithm [[1]](#references). Will search the mp3 file for valid MPEG header frames starting AFTER the ID3v2 tag. The reason is that many false sync signals can be detected in the ID3v2 tag which causes excessive processing since each sync signal must be evaluated to make sure it's a true MPEG header frame.
 
-Results are looking good so far! Here's a partial output of the valid MPEG header frames being detected in the first 10 KB (after the ID3v2 tag) of an mp3 file:
+Results are looking good so far! Here's an output of the valid MPEG header frames being detected in the first 10 KB (after the ID3v2 tag) of an mp3 file:
 
 ```
 Reading next chunk of 10000 bytes...
@@ -49,7 +49,9 @@ Detected sync byte at array index 8368 with a value of 1111111111111011111000100
 Detected sync byte at array index 9413 with a value of 11111111111110111110001001100100 or an ASCII value of ÿûâd
 ```
 
-If you count the gap between each detected (valid) MPEG header frame in the data above, you will notice it's always 1044 or 1045. This value happens to be the MPEG frame size. The results above are equivalent to the same mp3 file when viewed in Windows Media ASF View 9 Series.
+If you count the gap between each index in the data above, you will notice it's always 1044 or 1045. This value happens to be the MPEG frame size. The results above are equivalent to the same mp3 file when viewed in Windows Media ASF View 9 Series.
+
+Now the binary values above can be easily parsed according to the unofficial MPEG spec [[1]](#references) to give us the bitrate, sampling rate, etc. on a per-frame basis.
 
 **Auto-tag & auto-fix**
 
