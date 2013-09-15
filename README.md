@@ -68,7 +68,7 @@ References
 
 [1] [MPEG AUDIO HEADER FRAME](http://www.mpgedit.org/mpgedit/mpeg_format/mpeghdr.htm)  
 [2] [Help, I am going INSANE! WMP 12 album art.](http://social.technet.microsoft.com/Forums/windows/en-US/e6ee46cc-f088-4847-a9a2-58fac6888407/help-i-am-going-insane-wmp12-album-art)  
-[3] [«Защита» mp3 файлов на amazon.com / Информационная безопасность / Хабрахабр](https://plus.google.com/118266206851318889389/posts/2hscpA1fCNi)  
+[3] [«Защита» mp3 файлов на amazon.com / Информационная безопасность / Хабрахабр](http://habrahabr.ru/post/134523/)  
 
 History
 -------
