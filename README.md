@@ -31,7 +31,9 @@ A feature for the Tag Viewer; this would allow batch processing of mp3 files, su
 
 **MPEG stream parsing**
 
-Prototype has been developed utilizing a well known algorithm [[1]](#references). Will search the mp3 file for valid MPEG header frames starting AFTER the ID3v2 tag. The reason is that many false sync signals can be detected in the ID3v2 tag which causes excessive processing since each sync signal must be evaluated to make sure it's a true MPEG header frame.
+It turns out that the MPEG audio specs are not just freely available on the internet - they're copyrighted. However, in in 1998, Predrag Supurovic made this information available to the general public after some extensive internet and source code research [[1]](#references).
+
+A prototype has been developed utilizing a well known algorithm [[1]](#references). Will search the mp3 file for valid MPEG header frames starting AFTER the ID3v2 tag. The reason is that many false sync signals can be detected in the ID3v2 tag which causes excessive processing since each sync signal must be evaluated to make sure it's a true MPEG header frame.
 
 Results are looking good so far! Here's an output of the valid MPEG header frames being detected in the first 10 KB (after the ID3v2 tag) of an mp3 file:
 
