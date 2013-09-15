@@ -48,7 +48,7 @@ Automatically fill tag data (artist, album, track, artwork, etc) from online sou
 
 Trying to maintain a song library in Windows Media Player can be frustrating, and here's why...
 
-The official ID3 spec treats embedded artwork on a *per-song* basis. Every mp3 file in a folder or album can have it’s own unique artwork embedded in the mp3 file itself so that it’s portable without needing other jpg files, and software such as WinAmp will display the artwork for each mp3 file properly. However, Windows Media Player treats album artwork differently, by storing the artwork as hidden jpg files in the same folder as the mp3 files.
+The official ID3 spec treats artwork on a *per-song* basis. Every mp3 file in a folder or album can have it’s own unique artwork embedded in the mp3 file itself so that it’s portable without needing other jpg files, and software such as WinAmp will display the artwork for each mp3 file properly. However, Windows Media Player treats artwork differently, by storing the artwork as hidden jpg files in the same folder as the mp3 files.
 
 Windows Media Player 7 names the hidden jpg files **AlbumArtSmall.jpg**, **AlbumArtLarge.jpg** and **Folder.jpg**. You can only have one set of these in a folder, hence one set of artwork per folder. What if you organized your music in such a way where you had a folder containing hit singles from several different artists? Windows Media Player ends up using the artwork from a single mp3 file for the entire set of mp3 files in that folder.
 
@@ -58,7 +58,9 @@ Since the online content is submitted by users like yourself, a small portion of
 
 As was already explained in the above note about Windows Media Player 7, what ends up happening is that you can only have one set of artwork in a folder, thus Windows Media Player ends up using the artwork from a single song or album for the entire set of mp3 files in that folder, and it will overwrite the embedded artwork in those mp3 files, severely damaging your music collection.
 
-To make matters worse, Windows Media Player seems to store the GUID inside of a PRIV frame in the ID3 tag embedded in the mp3 file, so even if you try fixing the embedded artwork, Windows Media Player will see the GUID in the PRIV frame and regenerate the hidden jpg files. The problem spreads around from person to person, likely finds its way back into the online database, and never truly gets fixed because users don’t have a way of correcting mp3 files with bad GUIDs stored in PRIV frames of the ID3 tags.
+To make matters worse, Windows Media Player seems to store the GUID inside of a PRIV frame in the ID3 tag embedded in the mp3 file, so even if you try fixing the embedded artwork, Windows Media Player will see the GUID in the PRIV frame and regenerate the hidden jpg files. The problem spreads around from person to person, likely finds its way back into the online database, and never truly gets fixed because users don’t have a way of correcting mp3 files with bad GUIDs stored in PRIV frames of the ID3 tags:
+
+![Class Diagrams](http://files.glassocean.net/github/id3taglibrary1.jpg)
 
 Users of Microsoft Windows XP/Vista/7 have no doubt seen these before:
 
