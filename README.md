@@ -53,7 +53,7 @@ Detected sync byte at array index 9413 with a value of 1111111111111011111000100
 
 If you count the gap between each index in the data above, you will notice it's always 1044 or 1045. This value happens to be the MPEG frame size. The results above are equivalent to the same mp3 file when viewed in Windows Media ASF View 9 Series.
 
-Now the binary values above can be easily parsed according to the unofficial MPEG spec [[1]](#references) to give us the bitrate, sampling rate, etc. on a per-frame basis.
+Now the binary values above can be easily parsed according to the unofficial MPEG spec [[1]](#references) to give us the bitrate, sampling rate, etc. on a per-frame basis. VBRI, XING and LAME header parsing should be implemented to support VBR streams.
 
 **Auto-tag & auto-fix**
 
