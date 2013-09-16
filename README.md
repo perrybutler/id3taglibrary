@@ -39,21 +39,21 @@ Results are looking good so far! Here's an output of the valid MPEG header frame
 
 ```
 Reading next chunk of 10000 bytes...
-Detected sync byte at array index 10 with a value of 11111111111110111110000001100100 or an ASCII value of ÿûàd
-Detected sync byte at array index 1054 with a value of 11111111111110111110000001100100 or an ASCII value of ÿûàd
-Detected sync byte at array index 2098 with a value of 11111111111110111110001001100100 or an ASCII value of ÿûâd
-Detected sync byte at array index 3143 with a value of 11111111111110111110001001100100 or an ASCII value of ÿûâd
-Detected sync byte at array index 4188 with a value of 11111111111110111110001001100100 or an ASCII value of ÿûâd
-Detected sync byte at array index 5233 with a value of 11111111111110111110001001100100 or an ASCII value of ÿûâd
-Detected sync byte at array index 6278 with a value of 11111111111110111110001001100100 or an ASCII value of ÿûâd
-Detected sync byte at array index 7323 with a value of 11111111111110111110001001100100 or an ASCII value of ÿûâd
-Detected sync byte at array index 8368 with a value of 11111111111110111110001001100100 or an ASCII value of ÿûâd
-Detected sync byte at array index 9413 with a value of 11111111111110111110001001100100 or an ASCII value of ÿûâd
+Detected MPEG header frame sync byte at array index 10 with a binary value of 11111111111110111110000001100100 or an ASCII value of ÿûàd or decoded values of BR: 320000 SR: 44100
+Detected MPEG header frame sync byte at array index 1054 with a binary value of 11111111111110111110000001100100 or an ASCII value of ÿûàd or decoded values of BR: 320000 SR: 44100
+Detected MPEG header frame sync byte at array index 2098 with a binary value of 11111111111110111110001001100100 or an ASCII value of ÿûâd or decoded values of BR: 320000 SR: 44100
+Detected MPEG header frame sync byte at array index 3143 with a binary value of 11111111111110111110001001100100 or an ASCII value of ÿûâd or decoded values of BR: 320000 SR: 44100
+Detected MPEG header frame sync byte at array index 4188 with a binary value of 11111111111110111110001001100100 or an ASCII value of ÿûâd or decoded values of BR: 320000 SR: 44100
+Detected MPEG header frame sync byte at array index 5233 with a binary value of 11111111111110111110001001100100 or an ASCII value of ÿûâd or decoded values of BR: 320000 SR: 44100
+Detected MPEG header frame sync byte at array index 6278 with a binary value of 11111111111110111110001001100100 or an ASCII value of ÿûâd or decoded values of BR: 320000 SR: 44100
+Detected MPEG header frame sync byte at array index 7323 with a binary value of 11111111111110111110001001100100 or an ASCII value of ÿûâd or decoded values of BR: 320000 SR: 44100
+Detected MPEG header frame sync byte at array index 8368 with a binary value of 11111111111110111110001001100100 or an ASCII value of ÿûâd or decoded values of BR: 320000 SR: 44100
+Detected MPEG header frame sync byte at array index 9413 with a binary value of 11111111111110111110001001100100 or an ASCII value of ÿûâd or decoded values of BR: 320000 SR: 44100
 ```
 
-If you count the gap between each index in the data above, you will notice it's always 1044 or 1045. This value happens to be the MPEG frame size. The results above are equivalent to the same mp3 file when viewed in Windows Media ASF View 9 Series.
+If you count the gap between each index in the data above, you will notice it's always 1044 or 1045. This value happens to be the MPEG frame size for each frame. The results above are equivalent to the same mp3 file when viewed in Windows Media ASF View 9 Series, a tool for verifying the integrity of media files to ensure they conform and are compatible with Microsoft's ASF specs.
 
-Now the binary values above can be easily parsed according to the unofficial MPEG spec [[1]](#references) to give us the bitrate, sampling rate, etc. on a per-frame basis. VBRI, XING and LAME header parsing should be implemented to support VBR streams.
+The binary values above can easily be parsed according to the unofficial MPEG spec [[1]](#references) to give us the bitrate, sampling rate, etc. on a per-frame basis. VBRI, XING and LAME header parsing should be implemented to support VBR streams.
 
 **Auto-tag & auto-fix**
 
