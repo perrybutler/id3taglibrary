@@ -39,21 +39,33 @@ Results are looking good so far! Here's an output of the valid MPEG header frame
 
 ```
 Reading next chunk of 10000 bytes...
-Detected MPEG header frame sync byte at array index 10 with a binary value of 11111111111110111110000001100100 or an ASCII value of ÿûàd or decoded values of BR: 320000 SR: 44100
-Detected MPEG header frame sync byte at array index 1054 with a binary value of 11111111111110111110000001100100 or an ASCII value of ÿûàd or decoded values of BR: 320000 SR: 44100
-Detected MPEG header frame sync byte at array index 2098 with a binary value of 11111111111110111110001001100100 or an ASCII value of ÿûâd or decoded values of BR: 320000 SR: 44100
-Detected MPEG header frame sync byte at array index 3143 with a binary value of 11111111111110111110001001100100 or an ASCII value of ÿûâd or decoded values of BR: 320000 SR: 44100
-Detected MPEG header frame sync byte at array index 4188 with a binary value of 11111111111110111110001001100100 or an ASCII value of ÿûâd or decoded values of BR: 320000 SR: 44100
-Detected MPEG header frame sync byte at array index 5233 with a binary value of 11111111111110111110001001100100 or an ASCII value of ÿûâd or decoded values of BR: 320000 SR: 44100
-Detected MPEG header frame sync byte at array index 6278 with a binary value of 11111111111110111110001001100100 or an ASCII value of ÿûâd or decoded values of BR: 320000 SR: 44100
-Detected MPEG header frame sync byte at array index 7323 with a binary value of 11111111111110111110001001100100 or an ASCII value of ÿûâd or decoded values of BR: 320000 SR: 44100
-Detected MPEG header frame sync byte at array index 8368 with a binary value of 11111111111110111110001001100100 or an ASCII value of ÿûâd or decoded values of BR: 320000 SR: 44100
-Detected MPEG header frame sync byte at array index 9413 with a binary value of 11111111111110111110001001100100 or an ASCII value of ÿûâd or decoded values of BR: 320000 SR: 44100
+Detected MPEG header frame sync byte at array index 458 with a binary value of 11111111111110111110001001100100 or an ASCII value of ÿûâd or decoded values of Bitrate: 320000 Sampling Rate: 44100
+Detected MPEG header frame sync byte at array index 1503 with a binary value of 11111111111110111110000001100100 or an ASCII value of ÿûàd or decoded values of Bitrate: 320000 Sampling Rate: 44100
+Detected MPEG header frame sync byte at array index 1947 with a binary value of 11111111111111000100100111000000 or an ASCII value of ÿüIÀ or decoded values of Bitrate: 56000 Sampling Rate: 32000
+Detected MPEG header frame sync byte at array index 2547 with a binary value of 11111111111110111110001001100100 or an ASCII value of ÿûâd or decoded values of Bitrate: 320000 Sampling Rate: 44100
+Detected MPEG header frame sync byte at array index 2835 with a binary value of 11111111111111111001010111110001 or an ASCII value of ÿÿ•ñ or decoded values of Bitrate: 128000 Sampling Rate: 48000
+Detected MPEG header frame sync byte at array index 2843 with a binary value of 11111111111111111100101100011100 or an ASCII value of ÿÿË or decoded values of Bitrate: 224000 Sampling Rate: 32000
+Detected MPEG header frame sync byte at array index 3592 with a binary value of 11111111111110111110001001000100 or an ASCII value of ÿûâD or decoded values of Bitrate: 320000 Sampling Rate: 44100
+Detected MPEG header frame sync byte at array index 4637 with a binary value of 11111111111110111110001001000100 or an ASCII value of ÿûâD or decoded values of Bitrate: 320000 Sampling Rate: 44100
+Detected MPEG header frame sync byte at array index 5123 with a binary value of 11111111111111111011010110011011 or an ASCII value of ÿÿµ› or decoded values of Bitrate: 192000 Sampling Rate: 48000
+Detected MPEG header frame sync byte at array index 5682 with a binary value of 11111111111110111110001001000100 or an ASCII value of ÿûâD or decoded values of Bitrate: 320000 Sampling Rate: 44100
+Detected MPEG header frame sync byte at array index 6727 with a binary value of 11111111111110111110001001000100 or an ASCII value of ÿûâD or decoded values of Bitrate: 320000 Sampling Rate: 44100
+Detected MPEG header frame sync byte at array index 7682 with a binary value of 11111111111111111110000000111111 or an ASCII value of ÿÿà? or decoded values of Bitrate: 320000 Sampling Rate: 44100
+Detected MPEG header frame sync byte at array index 7772 with a binary value of 11111111111110111110001001100100 or an ASCII value of ÿûâd or decoded values of Bitrate: 320000 Sampling Rate: 44100
+Detected MPEG header frame sync byte at array index 8085 with a binary value of 11111111111111011110101110010111 or an ASCII value of ÿýë— or decoded values of Bitrate: 320000 Sampling Rate: 32000
+Detected MPEG header frame sync byte at array index 8731 with a binary value of 11111111111111111110101100011111 or an ASCII value of ÿÿë or decoded values of Bitrate: 320000 Sampling Rate: 32000
+Detected MPEG header frame sync byte at array index 8817 with a binary value of 11111111111110111110001001000100 or an ASCII value of ÿûâD or decoded values of Bitrate: 320000 Sampling Rate: 44100
+Detected MPEG header frame sync byte at array index 9862 with a binary value of 11111111111110111110001001000100 or an ASCII value of ÿûâD or decoded values of Bitrate: 320000 Sampling Rate: 44100
 ```
 
-If you count the gap between each index in the data above, you will notice it's always 1044 or 1045. This value happens to be the MPEG frame size for each frame. The results above are equivalent to the same mp3 file when viewed in Windows Media ASF View 9 Series, a tool for verifying the integrity of media files to ensure they conform and are compatible with Microsoft's ASF specs.
+The results above are equivalent to the same mp3 file when viewed in Windows Media ASF View 9 Series, a tool for verifying the integrity of media files to ensure they conform with Microsoft's ASF specs.
 
-The binary values above can easily be parsed according to the unofficial MPEG spec [[1]](#references) to give us the bitrate, sampling rate, etc. on a per-frame basis. VBRI, XING and LAME header parsing should be implemented to support VBR streams.
+Looking at the data above we notice several key facts:
+
+* The binary values are parsed according to the unofficial MPEG spec [[1]](#references) to give us the bitrate, sampling rate, etc. on a per-frame basis. VBRI, XING and LAME header parsing should be implemented to support VBR streams.
+* Not every MPEG frame will contain the same data (bitrate, sampling rate, etc) because encoding happens on a per-frame basis.
+* We cannot determine the song length based on a single MPEG frame; instead we must count all frames or do an approximation by averaging the first several frames.
+* If you count the gap between each index in the data, you will notice it's always 1044 or 1045. This value happens to be the MPEG frame size for each frame.
 
 **Auto-tag & auto-fix**
 
