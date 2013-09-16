@@ -31,7 +31,7 @@ A feature for the Tag Viewer; this would allow batch processing of mp3 files, su
 
 **MPEG stream parsing**
 
-It turns out that the MPEG audio specs are not just freely available on the internet - they're copyrighted. However, in in 1998, Predrag Supurovic made this information available to the general public after some extensive internet and source code research [[1]](#references).
+It turns out that the MPEG audio specs are not just freely available on the internet - they're copyrighted. However, in 1998, Predrag Supurovic made this information available to the general public after some extensive internet and source code research [[1]](#references).
 
 A prototype has been developed utilizing a well known algorithm [[1]](#references). Will search the mp3 file for valid MPEG header frames starting AFTER the ID3v2 tag. The reason is that many false sync signals can be detected in the ID3v2 tag which causes excessive processing since each sync signal must be evaluated to make sure it's a true MPEG header frame.
 
@@ -65,7 +65,7 @@ Looking at the data above we notice several key facts:
 * The binary values are parsed according to the unofficial MPEG spec [[1]](#references) to give us the bitrate, sampling rate, etc. on a per-frame basis. VBRI, XING and LAME header parsing should be implemented to support VBR streams without needing to process the entire file.
 * Not every MPEG frame will contain the same data (bitrate, sampling rate, etc) because encoding happens on a per-frame basis. This is always the case with VBR encoding, but if we detect bitrate/sampling rate changes in a file that uses CBR encoding, we should ignore those frames because they are technically invalid.
 * We cannot determine the song length based on a single MPEG frame; instead we must count all frames (process the entire file) or do an approximation by averaging the first several frames.
-* If you count the gap between each index in the data, you will notice it's always 1044 or 1045. This value happens to be the MPEG frame size for each frame.
+* If you count the gap between each index in the data, you will notice it's usually 1044 or 1045. This value happens to be the MPEG frame size for each frame. However, if frames are detected that don't have this computed frame size, we should discard them because they are likely false sync signals.
 
 **Auto-tag & auto-fix**
 
