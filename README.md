@@ -21,7 +21,7 @@ Roadmap
 
 **Tag mapping**
 
-Partial tag mapping is already implemented, but the guys over at HydrogenAudio.org have setup a wiki attempting to unify tag mapping across several tag formats. This is the closest to a tag mapping standard out there so the lib should support it by implementing it.
+Partial tag mapping is already implemented, but the guys over at HydrogenAudio.org have setup a wiki attempting to unify tag mapping across several tag formats. This is the closest to a tag mapping standard out there so the lib should support it by implementing it. Ideally, one should be able to grab the "Artist" of any file by just calling the wrapper property e.g. mp3.Artist instead of digging through multiple artist frames for a value.
 
 **Tag writing**
 
