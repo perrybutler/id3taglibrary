@@ -19,6 +19,10 @@ The Tag Viewer is currently not available as an open-source project...
 Roadmap
 -------
 
+**Tag mapping**
+
+Partial tag mapping is already implemented, but the guys over at HydrogenAudio.org have setup a wiki attempting to unify tag mapping across several tag formats. This is the closest to a tag mapping standard out there so the lib should support it by implementing it.
+
 **Tag writing**
 
 First prototype of direct ID3v2 frame data editing/saving has been partially implemented and tested, which involves  splitting and rejoining the file if the saved frame data is larger than the current frame size + padding. This should also include reading/writing custom frame types.
