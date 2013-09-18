@@ -62,7 +62,7 @@ The results above are equivalent to the same mp3 file when viewed in Windows Med
 
 Looking at the data above we notice several key facts:
 
-* The binary values are parsed according to the unofficial MPEG spec [[1]](#references) to give us the bitrate, sampling rate, etc. on a per-frame basis. VBRI, XING and LAME header parsing should be implemented to support VBR streams without needing to process the entire file.
+* The binary values are parsed according to the unofficial MPEG HEADER FRAME specs [[1]](#references) to give us the bitrate, sampling rate, etc. on a per-frame basis. VBRI, XING and LAME header parsing should be implemented to support VBR streams without needing to process the entire file.
 * Not every MPEG frame will contain the same data (bitrate, sampling rate, etc) because encoding happens on a per-frame basis. This is always the case with VBR encoding, but if we detect bitrate/sampling rate changes in a file that uses CBR encoding, we should ignore those frames because they are technically invalid.
 * We cannot determine the song length based on a single MPEG frame; instead we must count all frames (process the entire file) or do an approximation by averaging the first several frames.
 * If you count the gap between each index in the data, you will notice it's usually 1044 or 1045. This value happens to be the MPEG frame size for each frame. However, if frames are detected that don't have this computed frame size, we should discard them because they are likely false sync signals.
