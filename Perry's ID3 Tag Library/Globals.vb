@@ -176,5 +176,13 @@
         Return argString
     End Function
 
+    Function BytesToBinaryString(ByVal argBytes() As Byte) As String
+        Dim s As String = ""
+        For Each b As Byte In argBytes
+            s &= Convert.ToString(Convert.ToInt32(b), 2).PadLeft(8, "0")
+        Next
+        Return s
+    End Function
+
 End Module
 

@@ -1,6 +1,7 @@
 ﻿Public Class MP3File
 
     Public FileInfo As IO.FileInfo
+    Public MpegInfo As MpegInfo
     Public Tag1 As ID3v1Tag
     Public Tag2 As ID3v2Tag
 
@@ -136,13 +137,10 @@
     ''' <param name="argFilePath">Path to the MP3 file we wish to parse.</param>
     ''' <remarks></remarks>
     Sub New(ByVal argFilePath As String)
-
         Me.FileInfo = New IO.FileInfo(argFilePath)
-
-        ' TODO: file lock happens here, remove the lock after loading the file data:
         Me.Tag1 = New ID3v1Tag(Me.FileInfo)
         Me.Tag2 = New ID3v2Tag(Me.FileInfo)
-
+        Me.MpegInfo = New MpegInfo(Me.FileInfo, Me.Tag2.TagSize)
     End Sub
 
 End Class
