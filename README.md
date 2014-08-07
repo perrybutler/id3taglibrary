@@ -8,7 +8,7 @@ A free open-source ID3v1 and ID3v2 tag parsing utility for MP3 files. Programmed
 * Meticulously built from scratch in accordance with official ID3 spec.  
 * Detects ALL ID3v2 frames such as those typically hidden or ignored - PRIV, etc.  
 
-*This library detects tags on the binary level, true to the ID3 spec, therefore it can read an entire ID3 tag including all frames, not just a handful of common frames.*
+*This library parses ID3 tags on the binary level, true to the ID3 spec, therefore it can read an entire ID3 tag including all frames, not just a handful of common frames.*
 
 ![Class Diagrams](http://files.glassocean.net/github/id3taglibrary1.jpg)
 
